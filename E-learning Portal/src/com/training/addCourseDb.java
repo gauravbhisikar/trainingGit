@@ -12,9 +12,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class coursesHome extends HttpServlet{
+public class addCourseDb extends HttpServlet{
+
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 	
+		String courseName = req.getParameter("courseName");
+		String courseRef = req.getParameter("refrence");
+		String courseDesc = req.getParameter("desc");
+		String courseFees = req.getParameter("fees");
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -40,35 +45,19 @@ public class coursesHome extends HttpServlet{
 		}
         try {
         	
-        	
-			ResultSet rs=stmt.executeQuery("select * from E_Courses");
+        	System.out.println(String.format("insert into E_Courses values(courseId.nextval,'%s','%s','%s','%s',)",courseName,courseRef,courseDesc,courseFees));
+			ResultSet rs=stmt.executeQuery(String.format("insert into E_Learn values(courseId.nextval,'%s','%s','%s','%s',)",courseName,courseRef,courseDesc,courseFees));
 			
 			if(rs.next()) {
-				System.out.println("HAS NEXT E_COurses");
+				System.out.println("HAS NEXT courses");
 			}
 			else {
-				System.out.println("No next Ecourses");
+				System.out.println("No next");
 			}
-			
-            while (rs.next()) {
-  
-                String course_id = rs.getString(1);
-                String course_name = rs.getString(2);
-                String course_ref  = rs.getString(3);
-                String course_desc = rs.getString(4);
-                String course_fees = rs.getString(5);
-                System.out.println(course_id+course_name+course_ref+course_desc+course_fees);
-            }
-            
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
-}
-
-	
+        req.getRequestDispatcher("index.html").forward(req,res);
 	}
-	
-
+	}

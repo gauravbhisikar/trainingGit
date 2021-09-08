@@ -21,5 +21,25 @@
 <servlet-mapping>
 	<servlet-name>listCourses</servlet-name>
 	<url-pattern>/Courses</url-pattern>
-</servlet-mapping>  
+</servlet-mapping>
+
+  <servlet>
+  <servlet-name>addCourses</servlet-name>
+  <servlet-class>com.training.addCourseDb</servlet-class>
+  </servlet>
+  
+<servlet-mapping>
+	<servlet-name>addCourses</servlet-name>
+	<url-pattern>/addCourses</url-pattern>
+</servlet-mapping> 
+
+  <servlet>
+  <servlet-name>addFeedback</servlet-name>
+  <servlet-class>com.training.addFeedback</servlet-class>
+  </servlet>
+  
+<servlet-mapping>
+	<servlet-name>addFeedback</servlet-name>
+	<url-pattern>/addFeedback</url-pattern>
+</servlet-mapping>    
 </web-app>

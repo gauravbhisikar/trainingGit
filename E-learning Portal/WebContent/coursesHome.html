@@ -1,13 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
 </head>
 <body>
-<h1>Hello</h1>
-<form action="Courses">
-<input type="submit" value="List Courses"></input>
-</form>
+<ul>
+  <li id="home"><a href="index.html">Home</a></li>
+</ul>
+<h2>Availabe Courses</h2>
+
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>C++</h3>
+      <p>This course will start with the fundamental programming concepts  more advanced C++ topics.</p>
+     <input type="button" onclick="location.href='https://www.codecademy.com/catalog/language/c-plus-plus';" value="Enroll" />
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>Java</h3>
+      <p>Java is one of the most popular programming languages out there.</p>
+      <input type="button" onclick="location.href='https://www.codecademy.com/catalog/language/java';" value="Enroll" />
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Python</h3>
+      <p>Python is a general-purpose, versatile, and powerful programming language. </p>
+      <input type="button" onclick="location.href='https://www.codecademy.com/catalog/language/python';" value="Enroll" />
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>SQL</h3>
+      <p>SQL is the standard relational data management language.</p>
+      <input type="button" onclick="location.href='https://www.codecademy.com/catalog/language/sql';" value="Enroll" />
+    </div>
+  </div>
+  
+ <div class="column">
+    <div class="card">
+      <h3>JavaScript</h3>
+      <p>JavaScript is a fun and flexible programming language. .</p>
+      <input type="button" onclick="location.href='https://www.codecademy.com/catalog/language/javascript';" value="Enroll" />
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <h3>HTML/CSS</h3>
+      <p>HTML is the foundation of all web pages. It defines the structure of a page, while CSS defines its style.</p>
+      <input type="button" onclick="location.href='https://www.codecademy.com/catalog/language/html-css';" value="Enroll" />
+    </div>
+  </div>   
+</div>
+
 </body>
 </html>
