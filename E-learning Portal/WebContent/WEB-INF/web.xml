@@ -10,5 +10,16 @@
 <servlet-mapping>
 	<servlet-name>userlogin</servlet-name>
 	<url-pattern>/addUser</url-pattern>
+</servlet-mapping> 
+
+
+  <servlet>
+  <servlet-name>listCourses</servlet-name>
+  <servlet-class>com.training.coursesHome</servlet-class>
+  </servlet>
+  
+<servlet-mapping>
+	<servlet-name>listCourses</servlet-name>
+	<url-pattern>/Courses</url-pattern>
 </servlet-mapping>  
 </web-app>
